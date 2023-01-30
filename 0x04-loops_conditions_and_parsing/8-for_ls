@@ -8,6 +8,7 @@
 # You must use the for loop (while and until are forbidden)
 # Do not display hidden filesthe counter
 
-for file in *; do
-	echo "$file" | cut -d '-' -f 2-
-done;
+list=$(ls)
+for i in $list; do
+  echo "$i" | cut -d '-' -f2
+done
