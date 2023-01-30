@@ -15,4 +15,4 @@
     # You are not allowed to use while, for, until and cut
 
 
-awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
+awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -rn

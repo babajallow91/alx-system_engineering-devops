@@ -11,4 +11,4 @@
     # Download and commit the apache-access.log file along with your answers files
 
 
-awk '{print $1 " " $9}' apache-access.log
+awk '{ print $1,$9 }' apache-access.log
