@@ -15,16 +15,4 @@
     # You are not allowed to use while, for, until and cut
 
 
-# Store the sorted data in a variable
-sortedData=$(awk '{print $1 " " $9}' access.log | sort | uniq -c | sort -nr)
-
-# Loop through each line of the sorted data
-while read -r line; do
-  # Get the count, IP, and HTTP code from the line
-  count=$(echo $line | awk '{print $1}')
-  ip=$(echo $line | awk '{print $2}')
-  httpCode=$(echo $line | awk '{print $3}')
-
-  # Display the data in the desired format
-  echo "$count $ip $httpCode"
-done <<< "$sortedData"
+awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn

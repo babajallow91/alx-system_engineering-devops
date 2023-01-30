@@ -8,12 +8,16 @@
 
 # initialize the hour
 
-hours=0
-while [ $hours -le 12 ]; do
-    minutes=1
-    while [ $minutes -le 59 ]; do
-        echo "$hours:$minutes"
-        minutes=$((minutes+1))
-    done
-    hours=$((hours+1))
+hour=0
+
+while [ $hour -le 12 ]
+do
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]
+  do
+    echo "$minute"
+    (( minute++ ))
+  done
+  (( hour++ ))
 done
