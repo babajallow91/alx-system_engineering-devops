@@ -705,8 +705,8 @@ For every feedback, Shellcheck will provide a code that you can use to get more 
  
  Read:
  
- -   [IFS (internal field separator)](https://intranet.alxswe.com/rltoken/8VeAz2XHCtuECDJ0PfMNIg "IFS (internal field separator)")
- -   [Understanding /etc/passwd](https://intranet.alxswe.com/rltoken/jm2-sSa3VlvI4zgRdreAsg "Understanding /etc/passwd")
+ -   [IFS (internal field separator)](https://tldp.org/LDP/abs/html/internalvariables.html)
+ -   [Understanding /etc/passwd](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
  
  The file `/etc/passwd` has already been covered in a [previous project](https://intranet.alxswe.com/rltoken/5Y_b9prAxb_Y-l8xCaZwgQ "previous project") and you should be familiar with it. Today we will make up a story based on it.
  
@@ -765,13 +765,13 @@ For every feedback, Shellcheck will provide a code that you can use to get more 
  
  ![](https://intranet.alxswe.com/images/contents/sysadmin/projects/80/such_awk.jpg)
  
- [Apache](https://intranet.alxswe.com/rltoken/JfEwR2qcLdKkoihJNDZR0g "Apache") is among the most popular web servers in the world, serving 50% of all active websites, no doubt that you will have to interact with it within your career.
+ [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server) is among the most popular web servers in the world, serving 50% of all active websites, no doubt that you will have to interact with it within your career.
  
  As a Full-Stack Software Engineer, you have to master the art of parsing log files. Today we will do a simple parsing of [Apache log access files](http://intranet-projects-files.s3.amazonaws.com/holbertonschool-sysadmin_devops/80/apache-access.log "Apache log access files").
  
  Today the Customer Support department reported that a user reported that the site is being “buggy”. Not being a detailed description, you want to have a look at the Apache logs and gather data about the traffic.
  
- Write a Bash script that displays the visitor IP along with the [HTTP status code](https://intranet.alxswe.com/rltoken/7de-UBmf8xgwH1iSwzX1MA "HTTP status code") from the Apache log file.
+ Write a Bash script that displays the visitor IP along with the [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) from the Apache log file.
  
  Requirement:
  
