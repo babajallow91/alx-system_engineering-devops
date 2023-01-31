@@ -3,7 +3,7 @@
  
  _For this project, we expect you to look at this concept:_
  
- -   [Regular Expression](https://intranet.alxswe.com/concepts/29)
+ -   [Regular Expression](https://github.com/babajallow91/alx-system_engineering-devops/blob/main/0x06-regular_expressions/Regular-Expression.md)
  
  ## Background Context
  
