@@ -17,43 +17,14 @@ sudo apt-get install -y haproxy\*
 
 # Enable HAProxy in the system startup
 #echo "ENABLED=1" >> /etc/default/haproxy
-sudo sh -c 'echo "ENABLED=1" >> /etc/default/haproxy'
 
-# Rename the original HAProxy configuration file for backup
-sudo mv /etc/haproxy/haproxy.cfg{,.old}
-
-# Create a new empty HAProxy configuration file
-sudo touch /etc/haproxy/haproxy.cfg
+sudo sed -i -e '$aENABLED=1\n' /etc/default/haproxy
 
 # Add the HAProxy configuration to the new file
 # The `printf` command writes formatted output to the file.
 # The `%s` placeholder is replaced with the following string.
-sudo sh -c 'printf %s "global
-    log 127.0.0.1 local0 notice
-    maxconn 2000
-    user haproxy
-    group haproxy
-defaults
-    log     global
-    mode    http
-    option  httplog
-    option  dontlognull
-    retries 3
-    option redispatch
-    timeout connect  5000
-    timeout client  10000
-    timeout server  10000
-listen hbnb
-    bind 0.0.0.0:80
-    mode http
-    stats enable
-    stats uri /haproxy?stats
-    balance roundrobin
-    option httpclose
-    option forwardfor
-    server 120281-web-01 100.26.174.161:80 check
-    server 120281-web-02 35.175.126.31:80 check
-" >> /etc/haproxy/haproxy.cfg'
+
+sudo sed -i -e '$a\listen balancer\n\tbind :80\n\tbalance roundrobin\n\tserver 120281-web-01 100.26.174.161:80 check\n\tserver 120281-web-02 35.175.126.31:80 check\n' /etc/haproxy/haproxy.cfg
 
 # Start the HAProxy service
 sudo service haproxy start
