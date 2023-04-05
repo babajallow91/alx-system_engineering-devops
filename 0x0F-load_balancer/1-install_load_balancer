@@ -16,13 +16,10 @@ sudo apt-get update -y
 sudo apt-get install -y haproxy\*
 
 # Enable HAProxy in the system startup
-#echo "ENABLED=1" >> /etc/default/haproxy
 
 sudo sed -i -e '$aENABLED=1\n' /etc/default/haproxy
 
 # Add the HAProxy configuration to the new file
-# The `printf` command writes formatted output to the file.
-# The `%s` placeholder is replaced with the following string.
 
 sudo sed -i -e '$a\listen balancer\n\tbind :80\n\tbalance roundrobin\n\tserver 120281-web-01 100.26.174.161:80 check\n\tserver 120281-web-02 35.175.126.31:80 check\n' /etc/haproxy/haproxy.cfg
 
