@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# Install software-properties-common to allow adding PPAs
-# -y flag automatically answers yes to all prompts
-sudo apt-get install -y software-properties-common
-
-# Add the PPA for HAProxy
-# -y flag automatically answers yes to all prompts
-sudo add-apt-repository -y ppa:vbernat/haproxy 
-
 # Update the package list to include the HAProxy PPA
 sudo apt-get update -y
 
@@ -15,13 +7,23 @@ sudo apt-get update -y
 # -y flag automatically answers yes to all prompts
 sudo apt-get install -y haproxy\*
 
+# Add the HAProxy configuration to the new file
+echo "
+frontend go-online
+	bind *:80
+	default_backend online-hot
+	
+backend online-hot
+	balance roundrobin
+	server 120281-web-01 100.26.174.161:80 check
+	server 120281-web-02 35.175.126.31:80 check
+" >>  /etc/haproxy/haproxy.cfg
+
+
+
 # Enable HAProxy in the system startup
 
-sudo sed -i -e '$aENABLED=1\n' /etc/default/haproxy
-
-# Add the HAProxy configuration to the new file
-
-sudo sed -i -e '$a\listen balancer\n\tbind :80\n\tbalance roundrobin\n\tserver 120281-web-01 100.26.174.161:80 check\n\tserver 120281-web-02 35.175.126.31:80 check\n' /etc/haproxy/haproxy.cfg
+sudo sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
 # Start the HAProxy service
 sudo service haproxy start
