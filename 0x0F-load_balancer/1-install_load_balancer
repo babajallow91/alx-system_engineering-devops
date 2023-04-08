@@ -6,7 +6,9 @@
 sudo apt-get update -y
 sudo apt-get install haproxy -y
 
-# Add the HAProxy configuration to the new file
+# Make sure that HAproxy can be managed via an init script
+# Make sure that your servers are configured with the right hostnames: [STUDENT_ID]-web-01 and [STUDENT_ID]-web-02.
+
 echo "
 frontend web-frontend
 	bind *:80
@@ -21,8 +23,7 @@ backend web-backend
 
 
 
-# Enable HAProxy in the system startup
-
+# write a Bash script that configures a new Ubuntu machine
 sudo sed -i  's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
 
