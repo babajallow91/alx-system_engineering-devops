@@ -9,11 +9,12 @@ sudo apt-get install -y haproxy
 
 # Add the HAProxy configuration to the new file
 echo "
-frontend go-online
+frontend web-frontend
 	bind *:80
-	default_backend online-hot
-	
-backend online-hot
+	mode http
+	default_backend web-backend
+
+backend web-backend
 	balance roundrobin
 	server 120281-web-01 100.26.174.161:80 check
 	server 120281-web-02 35.175.126.31:80 check
@@ -23,7 +24,7 @@ backend online-hot
 
 # Enable HAProxy in the system startup
 
-echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+echo "ENABLED=1" > /etc/default/haproxy
 
 
 # Start the HAProxy service
