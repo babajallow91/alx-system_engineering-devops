@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Update the package list to include the HAProxy PPA
-sudo apt-get update -y
+# Installs and configure HAproxy on the lb-01 server
+# using roundrobin algorithm
 
-# Install HAProxy
+sudo apt-get update -y
 sudo apt-get install haproxy -y
 
 # Add the HAProxy configuration to the new file
