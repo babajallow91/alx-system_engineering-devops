@@ -5,7 +5,7 @@ sudo apt-get update -y
 
 # Install HAProxy and its dependencies
 # -y flag automatically answers yes to all prompts
-sudo apt-get install -y haproxy
+sudo apt-get install haproxy -y
 
 # Add the HAProxy configuration to the new file
 echo "
@@ -24,7 +24,7 @@ backend web-backend
 
 # Enable HAProxy in the system startup
 
-echo "ENABLED=1" > /etc/default/haproxy
+sudo sed -i  's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
 
 # Start the HAProxy service
