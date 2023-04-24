@@ -71,7 +71,7 @@ Your servers
 
 | Name | Username | IP | State |  |
 | --- | --- | --- | --- | --- |
-| 120281-web-01 | `ubuntu` | `100.26.174.161` | running |
+| 120281-web-01 | `ubuntu` | `54.165.42.169` | running |
 
 Actions Toggle Dropdown
 

@@ -34,6 +34,7 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
+
 frontend web-frontend
         bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/www.dev-salieu.tech.pem
@@ -43,5 +44,5 @@ frontend web-frontend
 
 backend web-backend
         balance roundrobin
-        server 120281-web-01 100.26.174.161:80 check
-        server 120281-web-02 35.175.126.31:80 check
+        server 120281-web-01 54.165.42.169:80 check
+        server 120281-web-02 54.175.145.139:80 check

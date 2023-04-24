@@ -123,7 +123,7 @@ Your servers
 
 | Name | Username | IP | State |  |
 | --- | --- | --- | --- | --- |
-| 1733-web-01 | `ubuntu` | `34.139.191.175` | running |
+| 1733-web-01 | `ubuntu` | `54.165.42.169` | running |
 
 Actions Toggle Dropdown
 

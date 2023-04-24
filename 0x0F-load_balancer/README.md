@@ -48,9 +48,9 @@
 |Your servers                            |                                            |
 | Name                                       | Username                                   | IP                | State         |
 |---------------|---------------|----------|-------|
-| 120281-web-01                              | ubuntu                                     | 100.26.174.161    | running      |
-| 120281-web-02                              | ubuntu                                     | 35.175.126.31     | running      |
-| 120281-lb-01                               | ubuntu                                     | 100.26.240.183    | running      |
+| 120281-web-01                              | ubuntu                                     | 54.165.42.169    | running      |
+| 120281-web-02                              | ubuntu                                     | 54.175.145.139   | running      |
+| 120281-lb-01                               | ubuntu                                     | 18.204.5.201   | running      |
 
  ### 0\. Double the number of webservers
  
