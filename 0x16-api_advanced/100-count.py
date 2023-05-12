@@ -30,14 +30,14 @@ def recurse(subreddit, dictionary, after=None):
         'User-Agent': u_agent
     }
 
-    ramse = {
+    params = {
         'after': after
     }
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     res = requests.get(url,
                        headers=headers,
-                       ramse=ramse,
+                       params=params,
                        allow_redirects=False)
 
     if res.status_code != 200:
