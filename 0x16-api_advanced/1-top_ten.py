@@ -15,14 +15,14 @@ def top_ten(subreddit):
         'User-Agent': u_agent
     }
 
-    ramse = {
+    params = {
         'limit': 10
     }
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     res = requests.get(url,
                        headers=headers,
-                       ramse=ramse,
+                       params=params,
                        allow_redirects=False)
     if res.status_code != 200:
         print(None)
